@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#121212">
+
 
     <LinearLayout
         android:id="@+id/linear"
@@ -19,19 +21,24 @@
             android:layout_height="67dp"
             android:fontFamily="monospace"
             android:text="Challenges"
-            android:textSize="35sp" />
+            android:textSize="35sp"
+            android:textColor="#FF4444"/>
 
         <Button
             android:id="@+id/claimAll"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FF4444"
             android:text="Claim All"
+            android:textColorLink="#FF4444"
             android:translationX="220dp" />
 
         <ListView
             android:id="@+id/challenges"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF4444"
+            android:cacheColorHint="#FF4444"/>
 
 
     </LinearLayout>

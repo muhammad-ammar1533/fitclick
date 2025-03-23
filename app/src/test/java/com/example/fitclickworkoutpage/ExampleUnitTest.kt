@@ -1,4 +1,4 @@
-package com.example.fitclick
+package com.example.fitclickworkoutpage
 
 import org.junit.Test
 

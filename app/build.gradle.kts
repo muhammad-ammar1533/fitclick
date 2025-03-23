@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fitclick"
+    namespace = "com.example.fitclickworkoutpage"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.fitclick"
+        applicationId = "com.example.fitclickworkoutpage"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

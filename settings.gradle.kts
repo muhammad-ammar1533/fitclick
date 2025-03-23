@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "FitClick"
+rootProject.name = "FitClick Workout Page"
 include(":app")

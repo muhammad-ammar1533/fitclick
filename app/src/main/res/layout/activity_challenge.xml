@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#121212">
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:fontFamily="monospace"
+            android:text="Challenges"
+            android:textSize="35sp"
+            android:textColor="#FF4444"/>
+
+        <Button
+            android:id="@+id/claimAll"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF4444"
+            android:text="Claim All"
+            android:textColorLink="#FF4444"
+            android:translationX="220dp" />
+
+        <Button
+            android:id="@+id/toGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF4444"
+            android:text="Back to Game"
+            android:textColorLink="#FF4444"
+            android:translationX="220dp" />
+
+        <ListView
+            android:id="@+id/challenges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF4444"
+            android:cacheColorHint="#FF4444"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

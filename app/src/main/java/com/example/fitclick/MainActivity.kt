@@ -1,5 +1,6 @@
 package com.example.fitclick
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         val loginButton = findViewById<Button>(R.id.loginButton)
         val registerButton = findViewById<Button>(R.id.registerButton)
         val leaderboardRecyclerView = findViewById<RecyclerView>(R.id.leaderboardRecyclerView)
+        val intent = Intent(this, GameActivity::class.java)
+
 
         // Set up RecyclerView
         leaderboardRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -29,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 Toast.makeText(this, "Logged in as $username", Toast.LENGTH_SHORT).show()
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show()
             }

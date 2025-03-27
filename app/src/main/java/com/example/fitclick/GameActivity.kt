@@ -16,11 +16,13 @@ class GameActivity : AppCompatActivity() {
     private var currentXP = 0
     private var xpGoal = 5000
     private var rank = "D"
+    private val workoutList: ArrayList<String> = ArrayList()
+    private val amountList: ArrayList<Int> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-
+        val challengeIntent = Intent(this,ChallengeActivity::class.java)
         val workoutType = findViewById<EditText>(R.id.workoutType)
         val workoutAmount = findViewById<EditText>(R.id.workoutAmount)
         val logWorkoutButton = findViewById<Button>(R.id.logWorkoutButton)
@@ -42,9 +44,18 @@ class GameActivity : AppCompatActivity() {
             val gainedXP = calculateXP(workout, amount)
             currentXP += gainedXP
 
+            if(!(workout.lowercase().equals("pushups") || workout.lowercase().equals("situps")
+                ||workout.lowercase().equals("running"))){
+                workoutList.add("other")
+            }else {
+                workoutList.add(workout)
+            }
+            amountList.add(amount)
+
             if (currentXP >= xpGoal) {
                 levelUp()
             }
+
 
             xpDisplay.text = "EXP: $currentXP/$xpGoal"
             //Log.d("vals","$xpProgressBar.progress $currentXP $xpGoal")
@@ -57,8 +68,9 @@ class GameActivity : AppCompatActivity() {
             startActivity(intent)
         }
         challengePage.setOnClickListener{
-            val intent = Intent(this,ChallengeActivity::class.java)
-            startActivity(intent)
+            challengeIntent.putExtra("workout", workoutList)
+            challengeIntent.putExtra("amount",amountList)
+            startActivity(challengeIntent)
         }
     }
 
